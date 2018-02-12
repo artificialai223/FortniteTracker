@@ -162,6 +162,7 @@ _client.on('message', async (message) => {
                                 soloStats = handleApiData(resp, "stats_solo");
                                 duoStats = handleApiData(resp, "stats_duo");
                                 squadStats = handleApiData(resp, "stats_squads");
+                                console.log(lifetimeStats);
                             }).then(() => {
                                 // Check error status
                                 if(error) return;
@@ -170,10 +171,10 @@ _client.on('message', async (message) => {
                                 let ebd = new _discord.RichEmbed();
                                 ebd.setAuthor(`Tracking '${userHandle}'`, _client.user.avatarURL);
                                 ebd.setThumbnail(_client.user.avatarURL);
-                                ebd.addField("Lifetime", `Wins: ${lifetimeStats['Wins']}, K/D: ${lifetimeStats['K/d']}, Playtime: ${lifetimeStats['Time Played']}`);
-                                ebd.addField("Solo", `Wins: ${soloStats['top1']}, K/D: ${soloStats['kd']}, Playtime: ${soloStats['minutesPlayed']}`);
-                                ebd.addField("Duo", `Wins: ${duoStats['top1']}, K/D: ${duoStats['kd']}, Playtime: ${duoStats['minutesPlayed']}`);
-                                ebd.addField("Squads", `Wins: ${squadStats['top1']}, K/D: ${squadStats['kd']}, Playtime: ${squadStats['minutesPlayed']}`);
+                                ebd.addField("Lifetime", `Wins: **${lifetimeStats['Wins']}** - K/D: **${lifetimeStats['K/d']}** - Playtime: **${lifetimeStats['Time Played']}**\nTop 3: **${lifetimeStats['Top 3s']}** - Top 5: **${lifetimeStats['Top 5s']}** - Top 6: **${lifetimeStats['Top 6s']}** - Top 12: **${lifetimeStats['Top 12s']}** - Top 25: **${lifetimeStats['Top 25s']}**`);
+                                ebd.addField("Solo", `Wins: **${soloStats['top1']}** - K/D: **${soloStats['kd']}** - Playtime: **${soloStats['minutesPlayed']}**`);
+                                ebd.addField("Duo", `Wins: **${duoStats['top1']}** - K/D: **${duoStats['kd']}** - Playtime: **${duoStats['minutesPlayed']}**`);
+                                ebd.addField("Squads", `Wins: **${squadStats['top1']}** - K/D: **${squadStats['kd']}** - Playtime: **${squadStats['minutesPlayed']}**`);
                                 ebd.setFooter(`Requested By: ${message.author.tag} | Created By Simps#0001`);
                                 message.channel.send({ embed: ebd });
                             });
