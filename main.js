@@ -3,12 +3,13 @@ const _discord = require('discord.js');
 const _client  = new _discord.Client();
 const _snek = require("snekfetch");
 const _fs = require("fs");
+const _config = require("./config.json");
 // KEYS
 const debug    = true;
 const prefix   = ':';
-const botKey   = "";
+const botKey   = _config.bot_key;
 const apiKeyK  = "TRN-Api-Key";
-const apiKeyV  = "";
+const apiKeyV  = _config.api_key;
 const apiLink  = "https://api.fortnitetracker.com/v1/profile";
 // CHANNELS
 const BR_PC    = (debug ? "412675076433903616" : "362236453771804683");
