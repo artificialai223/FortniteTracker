@@ -6,9 +6,9 @@ const _fs = require("fs");
 const _config = require("./config.json");
 // KEYS
 const debug    = true;
-const prefix   = ':';
+const prefix   = '!';
 const botKey   = _config.bot_key;
-const apiKeyK  = "TRN-Api-Key";
+const apiKeyK  = "296d3ab6-8259-4a3c-afeb-96a3c778a1c4";
 const apiKeyV  = _config.api_key;
 const apiLink  = "https://api.fortnitetracker.com/v1/profile";
 // CHANNELS
@@ -189,9 +189,9 @@ _client.on('message', async (message) => {
 
 // READY
 _client.on('ready', () => {
-    _client.user.setUsername("Tracker");
+    _client.user.setUsername("Fortnite Tracker");
   console.log(`Logged in as ${_client.user.tag}!`);
 });
 
 // LOGIN
-_client.login(botKey);
+_client.login(NTYyMzIyOTAyNDEwNTkyMjc2.XKJHow.1JydCfHq21_7WZuPNHg8RIMSCoQ);
